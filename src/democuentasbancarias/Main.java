@@ -8,6 +8,7 @@ package democuentasbancarias;
 import java.util.Scanner;
 import modelo.CuentaBasica;
 import modelo.CuentaDeAhorro;
+import modelo.CuentaDeCheques;
 
 /**
  *
@@ -137,5 +138,43 @@ System.out.println("---------------------------------------------------------");
     System.out.println("Corte Mensual:");
     System.out.println(misAhorros.getSaldo() + misAhorros.calcularInteres() -
             misAhorros.calcularComisionPorSaldo(1650));   
+    
+System.out.println("_________________________________________________________");
+
+    System.out.println(" Cuenta de Cheques ");
+    
+    // Creamos la cuenta
+    CuentaDeCheques misCheques = new CuentaDeCheques(16470257, "Tania Martínez Tuz", 2000);
+    System.out.println(" Datos de la cuenta");
+    System.out.println(" Cliente:" + misCheques.getCliente());
+    System.out.println(" Número de Cuenta:" + misCheques.getNumeroDeCuenta());
+    System.out.println(" Saldo:" + misCheques.getSaldo());
+    
+System.out.println("---------------------------------------------------------");
+
+    System.out.println(" ¿Cuánto desea depositar?");
+    double cantidad;
+    cantidad = entrada.nextInt();
+    misCheques.depositar(cantidad);
+    
+    System.out.println(" Su saldo es: $" + misCheques.getSaldo());
+    
+System.out.println("---------------------------------------------------------");
+
+    System.out.println(" ¿Cuánto desea retirar?");
+    cantidad = entrada.nextInt();
+    misCheques.retirar(cantidad);
+
+System.out.println("---------------------------------------------------------");
+    
+    System.out.println(" Su comisión por Cheques Emitidos es: $" +
+            misCheques.calcularComisionPorChequesEmitidos());
+    
+    System.out.println(" Su comisión por Cheques Rebotados es: $" +
+            misCheques.calcularComisionPorChequesRebotados());
+    
+System.out.println("---------------------------------------------------------");
+
+        System.out.println(" Su saldo es: $" + (misCheques.getSaldo()- cantidad));
     }
 }
