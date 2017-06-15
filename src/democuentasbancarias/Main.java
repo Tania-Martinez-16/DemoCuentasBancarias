@@ -7,6 +7,7 @@ package democuentasbancarias;
 
 import java.util.Scanner;
 import modelo.CuentaBasica;
+import modelo.CuentaDeAhorro;
 
 /**
  *
@@ -71,7 +72,70 @@ System.out.println("---------------------------------------------------------");
     
     // Saldo actual
     System.out.println(" Su saldo es: " + miCuenta.getSaldo());
-        
-    }
+
+System.out.println("_________________________________________________________");
+
+    System.out.println(" Mi cuenta de Ahorro ");
     
+    // Se crea la cuenta
+    CuentaDeAhorro misAhorros = new CuentaDeAhorro(16470257, "Tania Martínez Tuz", 50);
+    System.out.println(" Datos de la cuenta ");
+    System.out.println(" Cliente: " + misAhorros.getCliente());
+    System.out.println(" Número de Cuenta: " + misAhorros.getNumeroDeCuenta());
+    
+System.out.println("---------------------------------------------------------");
+
+    //Depositar $1,000.00
+    System.out.println(" Se deposita en la cuenta: $1,000.00");
+    misAhorros.depositar(1000);
+    
+    // Saldo actual
+    System.out.println(" Su saldo es: " + misAhorros.getSaldo());
+    
+System.out.println("---------------------------------------------------------");
+
+    //Depositar $1,500.00
+    System.out.println(" Se deposita en la cuenta: $1,500.00");
+    misAhorros.depositar(1500);
+
+    // Saldo actual
+    System.out.println(" Su saldo es: " + misAhorros.getSaldo());    
+    
+System.out.println("---------------------------------------------------------");    
+
+    // Retirar $200.00
+    System.out.println(" Se deposita en la cuenta: $200.00");
+    misAhorros.retirar(200);
+
+    // Saldo actual
+    System.out.println(" Su saldo es: " + misAhorros.getSaldo());   
+    
+System.out.println("---------------------------------------------------------");
+    
+    // Depositar $300.00
+    System.out.println(" Se deposita en la cuenta: $300.00");
+    misAhorros.depositar(300);
+
+    // Saldo actual
+    System.out.println(" Su saldo es: " + misAhorros.getSaldo());   
+
+System.out.println("---------------------------------------------------------");
+
+    // Retirar $1,000.00
+    System.out.println(" Se retira de la cuenta: $1,000");
+    misAhorros.retirar(1000);
+    
+    // Saldo actual
+    System.out.println(" Su saldo es: " + misAhorros.getSaldo());
+    
+System.out.println("---------------------------------------------------------");
+
+    System.out.println(" Intereses:");
+    System.out.println(misAhorros.calcularInteres());
+    System.out.println(" Comisión:");
+    System.out.println(misAhorros.calcularComisionPorSaldo(1650));
+    System.out.println("Corte Mensual:");
+    System.out.println(misAhorros.getSaldo() + misAhorros.calcularInteres() -
+            misAhorros.calcularComisionPorSaldo(1650));   
+    }
 }
