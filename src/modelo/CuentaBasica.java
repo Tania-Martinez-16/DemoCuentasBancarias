@@ -11,9 +11,9 @@ package modelo;
  */
 public class CuentaBasica {
     // Variables de instancia
-    private int numeroDeCuenta;
-    private String cliente;
-    private double saldo;
+    protected int numeroDeCuenta;
+    protected String cliente;
+    protected double saldo;
     private double cantidad;
     
     // Constructor
